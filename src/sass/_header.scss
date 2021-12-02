@@ -1,0 +1,22 @@
+.header {
+    position: fixed;
+    height: 80px;
+    width: 100vw;
+    background-color: #222;
+    color: #fff;
+    font-size: 1.6rem;
+    &-container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-logo {
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        span {
+            font-weight: 600;
+        }
+    }
+}
