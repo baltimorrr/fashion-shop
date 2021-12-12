@@ -1,7 +1,33 @@
 .home {
     height: 100%;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    z-index: 1;
     &-inner {
         height: 500px;
+        background-color: #eeeeee;
+    }
+}
+
+
+.products {
+    height: auto;
+    width: 100%;
+    margin-bottom: 350px;
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px 30px;
+
+}
+
+.product {
+    &-card {
+        img {
+            width: 265px;
+            object-fit: cover;
+        }
     }
 }
 

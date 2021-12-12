@@ -1,13 +1,11 @@
 import React from 'react'
+import ProductList from '../components/ProductList'
 
 const Home = () => {
     return (
         <div className="home">
             <div className="home-container container">
-                <div className="home-inner">111111111</div>
-                <div className="home-inner">111111111</div>
-                <div className="home-inner">11111111</div>
-                <div className="home-inner">1111111111</div>
+                <ProductList />
             </div>
         </div>
     )
