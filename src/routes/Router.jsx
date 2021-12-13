@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 
 const Router = () => {
     return (
-        <div>
+        <div className="router">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />

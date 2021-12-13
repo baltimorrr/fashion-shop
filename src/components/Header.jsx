@@ -3,7 +3,6 @@ import CartDrawer from "./CartDrawer";
 
 const Header = () => {
     const [visible, setVisible] = useState(false);
-    console.log("render header");
     const handleVisibleCartDrawer = () => {
         setVisible(!visible);
     };

@@ -2,13 +2,13 @@ import React, { useRef } from "react";
 
 const CartDrawer = ({ isVisible, handleVisibleCartDrawer }) => {
     const ref = useRef(null);
-    console.log({ ref });
+    // console.log({ ref });
 
     const visible = isVisible ? "" : "hidden";
 
     const handleClickOut = (e) => {
-        console.log(e.target);
-        console.log(ref.current);
+        // console.log(e.target);
+        // console.log(ref.current);
         if(e.target !== ref.current) {
             handleVisibleCartDrawer()
         }

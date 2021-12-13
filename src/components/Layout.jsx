@@ -12,7 +12,7 @@ const Layout = () => {
     const [products, setProducts] = useState(productData)
 
     return (
-        <div>
+        <div className="layout">
             <BrowserRouter>
                 <AppContext.Provider value={products}>
                     <Header />
