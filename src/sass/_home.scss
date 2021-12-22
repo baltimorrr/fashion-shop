@@ -32,4 +32,35 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1000;
+    &-container {
+        background-color: #fff;
+        max-width: 1160px;
+        height: 800px;
+        color: black;
+        margin: 0 auto;
+        position: relative;
+        top: 5%;
+        display: flex;
+        padding: 60px 30px;
+        border-radius: 4px;
+    }
+    &-picture {
+        width: 50%;
+        img {
+            height: 90%;
+            width: auto;
+        }
+    }
+    &-info {
+        margin-left: 50px;
+        h4 {
+            font-size: 24px;
+            padding-top: 14px;
+        }
+        span {
+            font-size: 18px;
+            color: #333;
+            font-weight: 400;
+        }
+    }
 }
