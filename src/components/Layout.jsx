@@ -4,23 +4,19 @@ import Router from "../routes/Router";
 import Footer from "./Footer";
 import Header from "./Header";
 
-import productData from "../assets/data/ProductData";
-
-export const AppContext = createContext();
-
 const Layout = () => {
-    const [products, setProducts] = useState(productData)
-
     return (
         <div className="layout">
             <BrowserRouter>
-                <AppContext.Provider value={products}>
+                <div>
                     <Header />
-                    <div>
-                        <Router />
+                    <div className="container">
+                        <div className="main">
+                            <Router />
+                        </div>
                     </div>
                     <Footer />
-                </AppContext.Provider>
+                </div>
             </BrowserRouter>
         </div>
     );

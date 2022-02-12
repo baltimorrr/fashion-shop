@@ -1,13 +1,13 @@
 import React from 'react'
-import ProductList from '../components/ProductList'
+import Helmet from '../components/Helmet'
 
 const Home = () => {
     return (
-        <div className="home">
-            <div className="home-container container">
-                <ProductList />
+        <Helmet title="Home">
+            <div className="home">
+                Home
             </div>
-        </div>
+        </Helmet>
     )
 }
 
