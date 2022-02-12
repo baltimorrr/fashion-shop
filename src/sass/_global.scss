@@ -9,7 +9,7 @@
     padding: 0 15px;
 }
 
-.button {
+.btn {
     cursor: pointer;
     outline: none;
     font-size: 15px;
@@ -20,12 +20,13 @@
     border: 0;
     background-color: transparent;
     height: 46px;
-    min-width: 161px;
+    max-width: 161px;
     &-blue {
         background-color: #717fe0;
         text-transform: uppercase;
         border-radius: 2.3rem;
         height: 46px;
+        transition: background-color 0.3s ease;
         &:hover {
             background-color: #222;
         }

@@ -1,0 +1,57 @@
+.hero-slider {
+    &__item {
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        &__content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            &__inner {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: visible;
+        }
+    }
+    &__left, &__right {
+        position: absolute;
+        z-index: 1001;
+        font-size: 80px;
+        top: 50%;  
+        color: $text-main-color;
+        transition: all 0.5s ease;
+        &:hover {
+            color: $btn-second-color;
+        }      
+    }
+    &__right {
+        right: 0;
+    }
+}
+
+.hero {
+    &__subtitle {
+        font-size: 2.8rem;
+        text-transform: capitalize;
+        line-height: 36px;
+        color: $text-main-color;
+    }
+    &__title {
+        font-size: 6rem;
+        text-transform: uppercase;
+        line-height: 66px;
+        color: $text-main-color;
+        font-weight: 500;
+    }
+}

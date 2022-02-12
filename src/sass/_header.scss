@@ -2,7 +2,7 @@
     background-color: transparent;
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 10000;
     &__main {
         height: 84px;
         display: flex;
@@ -46,7 +46,7 @@
 }
 
 .shrink {
-    background-color: #eee;
+    background-color: #fff;
     .header__main {
         height: 70px;
     }
