@@ -26,10 +26,10 @@ const HeroSlider = (props) => {
                 />
             ))}
             <div className="hero-slider__left" onClick={prevSlide}>
-                <i class="bx bx-caret-left"></i>
+                <i className="bx bx-caret-left"></i>
             </div>
             <div className="hero-slider__right" onClick={nextSlide}>
-                <i class="bx bx-caret-right"></i>
+                <i className="bx bx-caret-right"></i>
             </div>
         </div>
     );
