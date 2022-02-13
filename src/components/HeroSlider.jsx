@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeroSlider = (props) => {
     const data = props.data;
@@ -39,6 +40,12 @@ HeroSlider.propTypes = {
 };
 
 const HeroSliderItem = (props) => {
+    const navigate = useNavigate()
+
+    const goToShop = () => {
+        navigate('/catalog')
+    }
+
     return (
         <div
             className={`hero-slider__item ${props.active ? 'active' : ''}`}
@@ -56,7 +63,9 @@ const HeroSliderItem = (props) => {
                             {props.item.subtitle}
                         </span>
                         <span className="hero__title">{props.item.title}</span>
-                        <button className="btn btn-blue">Shop now</button>
+                        <button className="btn btn-blue" onClick={goToShop}>
+                                Shop now
+                        </button>
                     </div>
                 </div>
             </div>

@@ -46,12 +46,20 @@
         text-transform: capitalize;
         line-height: 36px;
         color: $text-main-color;
+        margin-bottom: 20px;
     }
     &__title {
         font-size: 6rem;
         text-transform: uppercase;
         line-height: 66px;
         color: $text-main-color;
+        font-family: 'Playfair Display', serif;
         font-weight: 500;
+        margin-bottom: 50px;
+    }
+    button {
+        a {
+            color: #fff;
+        }
     }
 }
