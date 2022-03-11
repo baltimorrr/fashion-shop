@@ -1,5 +1,7 @@
 import React, {useRef} from "react";
+import { useProducts } from "./context/productsContext";
 import Helmet from "./Helmet";
+import ProductCard from "./ProductCard";
 
 const categories = [
     {
@@ -22,7 +24,7 @@ const categories = [
 
 const Product = (props) => {
     const filterRef = useRef(null)
-    const products = props.data
+    const {products} = useProducts()
 
     console.log(products);
 
@@ -37,7 +39,7 @@ const Product = (props) => {
                         <div className="product__header__option">
                             <div className="product__header__option__category">
                                 {categories.map((item, index) =>
-                                    <p>{item.title}</p>
+                                    <p key={index}>{item.title}</p>
                                 )}
                             </div>
                             <div className="product__header__option__button">
@@ -53,16 +55,12 @@ const Product = (props) => {
                     </div>
                     <div className="product__list">
                         {products.map((item, index) => (
-                            <div className="product__list__item" key={index}>
-                                <div className="item__logo">
-                                    <img src={item.image01} alt="" />
-                                </div>
-
-                            </div>
+                            <ProductCard key={index} item={item} />
                         ))}
                     </div>
                 </div>
             </div>
+            
         </Helmet>
     );
 };

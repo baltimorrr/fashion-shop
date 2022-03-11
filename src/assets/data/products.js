@@ -37,6 +37,7 @@ const product_image_09_3 = require('../images/products/product-09-3.jpg').defaul
 
 const products = [
     {
+        id: 1,
         title: 'Long Sleeve Slit T-shirt',
         price: '499000',
         image01: product_image_01_1,
@@ -46,9 +47,11 @@ const products = [
         colors: ['white', 'gray', 'black', 'orange', 'purple'],
         size: ['s', 'm', 'l', 'xxl'],
         slug: 'women-01',
+        isFavorite: false,
         describe: 'Long-sleeve T-shirt with added sun protection. A versatile wardrobe essential'
     },
     {
+        id: 2,
         title: 'Crew Neck Long Sleeve T-shirt',
         price: '499000',
         image01: product_image_02_1,
@@ -58,9 +61,11 @@ const products = [
         colors: ['white', 'gray', 'black', 'pink', 'green'],
         size: ['s', 'm', 'l', 'xl'],
         slug: 'women-02',
+        isFavorite: false,
         describe: 'Our high-performance T-shirt for sports or everyday wear'
     },
     {
+        id: 3,
         title: 'Fleece Turtleneck Long Sleeve T-Shirt',
         price: '399000',
         image02: product_image_03_1,
@@ -70,10 +75,12 @@ const products = [
         colors: ['white', 'black', 'beige'],
         size: ['xs', 'm'],
         slug: 'women-03',
+        isFavorite: false,
         describe: 'In response to customer feedback, the body has been updated for a more relaxed fit'
     },
 
     {
+        id: 4,
         title: 'Boat Neck Sweater',
         price: '799000',
         image01: product_image_04_1,
@@ -83,9 +90,11 @@ const products = [
         colors: ['beige'],
         size: ['s', 'm', 'l'],
         slug: 'women-04',
+        isFavorite: false,
         describe: 'Comfortable knit with a springy texture. Slit hems for easy layering'
     },
     {
+        id: 5,
         title: 'Oversized Rugger Shirt',
         price: '799000',
         image01: product_image_05_1,
@@ -95,9 +104,11 @@ const products = [
         colors: ['blue', 'gray'],
         size: ['s'],
         slug: 'men-01',
+        isFavorite: false,
         describe: 'A rugby shirt with a quintessential JWA style. Features a striking stripe design'
     },
     {
+        id: 6,
         title: 'French Rib Cardigan',
         price: '999000',
         image02: product_image_06_1,
@@ -107,9 +118,11 @@ const products = [
         colors: ['gray', 'black'],
         size: ['s', 'm'],
         slug: 'men-02',
+        isFavorite: false,
         describe: 'A versatile cardigan with an elegant texture and a classic design.'
     },
     {
+        id: 7,
         title: 'Oversized Stand Collar Shirt',
         price: '489000',
         image01: product_image_07_1,
@@ -119,9 +132,11 @@ const products = [
         colors: ['white', 'gray', 'black'],
         size: ['m', 'l'],
         slug: 'men-03',
+        isFavorite: false,
         describe: 'A sophisticated shirt with minimalist design.'
     },
     {
+        id: 8,
         title: 'UV Protection Compact Umbrella',
         price: '391000',
         image01: product_image_08_1,
@@ -131,9 +146,11 @@ const products = [
         colors: ['black', 'navy'],
         size: [],
         slug: 'accessories-01',
+        isFavorite: false,
         describe: 'A convenient folding umbrella for both sunny and rainy days. Compact yet strong.'
     },
     {
+        id: 9,
         title: 'Mini Shoulder Bag',
         price: '499000',
         image02: product_image_09_1,
@@ -143,9 +160,10 @@ const products = [
         colors: ['black', 'brown'],
         size: [],
         slug: 'accessories-02',
+        isFavorite: false,
         describe: 'The perfect size for a quick outing. Three pocket design provides neat storage.'
     },
-    //12 products
+    //9 products
 ]
 
 const getAllProducts = () => products

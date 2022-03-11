@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/images/logo.png";
@@ -31,20 +31,25 @@ const mainNav = [
 ];
 
 const Header = () => {
-    const headerRef = useRef(null)
+    const headerRef = useRef(null);
+
+    const handleScrollHeader = () => {
+        if (
+            document.body.scrollTop > 80 ||
+            document.documentElement.scrollTop > 80
+        ) {
+            headerRef.current.classList.add("shrink");
+        } else {
+            headerRef.current.classList.remove("shrink");
+        }
+    };
 
     useEffect(() => {
-        window.addEventListener("scroll", () => {
-            if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                headerRef.current.classList.add('shrink')
-            } else {
-                headerRef.current.classList.remove('shrink')
-            }
-        })
+        window.addEventListener("scroll", handleScrollHeader);
         return () => {
-            window.removeEventListener("scroll")
-        }
-    }, [])
+            window.removeEventListener("scroll", handleScrollHeader);
+        };
+    }, []);
 
     return (
         <div className="header" ref={headerRef}>
