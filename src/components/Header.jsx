@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/images/logo.png";
+import { useProducts } from "./context/productsContext";
 
 const mainNav = [
     {
@@ -32,6 +33,7 @@ const mainNav = [
 
 const Header = () => {
     const headerRef = useRef(null);
+    const { cartItems, favoriteList } = useProducts();
 
     const handleScrollHeader = () => {
         if (
@@ -50,6 +52,8 @@ const Header = () => {
             window.removeEventListener("scroll", handleScrollHeader);
         };
     }, []);
+
+    console.log(cartItems);
 
     return (
         <div className="header" ref={headerRef}>
@@ -72,8 +76,22 @@ const Header = () => {
                     <div className="header__right">
                         <div className="header__icons">
                             <i className="bx bx-search"></i>
-                            <i className="bx bxs-cart"></i>
-                            <i className="bx bx-heart"></i>
+                            <div className="header__icons__item">
+                                <i className="bx bxs-cart"></i>
+                                {cartItems.length > 0 && (
+                                    <div className="header__icons__count">
+                                        {cartItems.length}
+                                    </div>
+                                )}
+                            </div>
+                            <div className="header__icons__item">
+                                <i className="bx bx-heart"></i>
+                                {favoriteList.length > 0 && (
+                                    <div className="header__icons__count">
+                                        {favoriteList.length}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

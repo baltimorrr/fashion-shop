@@ -27,6 +27,7 @@ const ProductProvider = (props) => {
     const value = {
         products,
         cartItems,
+        favoriteList,
         setProducts,
         setCartItems,
         addToCart,

@@ -1,10 +1,13 @@
 import React from 'react'
 import Helmet from '../components/Helmet'
+import Product from '../components/Product'
 
 const Catalog = () => {
     return (
         <Helmet title='Catalog'>
-            Catalog
+            <div className="catalog">
+                <Product showHeading={false} />
+            </div>
         </Helmet>
     )
 }

@@ -16,7 +16,7 @@ const Home = () => {
                 <HeroSlider data={heroSliderData}/>
 
                 <Category data={categories} />
-
+                
                 <Product />
             </div>
         </Helmet>

@@ -22,7 +22,7 @@ const categories = [
     },
 ];
 
-const Product = (props) => {
+const Product = ({showHeading = true}) => {
     const filterRef = useRef(null)
     const {products} = useProducts()
 
@@ -35,7 +35,7 @@ const Product = (props) => {
             <div className="product">
                 <div className="container">
                     <div className="product__header">
-                        <h3>product overview</h3>
+                       {showHeading && <h3>product overview</h3>}
                         <div className="product__header__option">
                             <div className="product__header__option__category">
                                 {categories.map((item, index) =>
