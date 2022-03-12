@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useProducts } from "./context/productsContext";
 import ProductModal from "./ProductModal";
 
 const ProductCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false)
+    const {toggleFavorite} = useProducts()
 
     const handleClose = () => {
         setShowModal(false)
@@ -23,15 +25,14 @@ const ProductCard = ({ item }) => {
                         <p>{item.title}</p>
                         <span>{item.price} VND</span>
                     </div>
-                    <div className="product__list__item__content__right">
+                    <div className="product__list__item__content__right" onClick={() => {toggleFavorite(item.id)}}>
                         <i
-                            className="bx bxs-heart"
-                            style={{ color: "red" }}
+                            className={`bx bxs-heart favorite-${item.isFavorite ? 'red' : 'gray'}`}
                         ></i>
                     </div>
                 </div>
             </div>
-            <ProductModal open={showModal} handleClose={handleClose} item={item} />
+            {showModal && <ProductModal open={showModal} handleClose={handleClose} item={item} />}
         </>
     );
 };

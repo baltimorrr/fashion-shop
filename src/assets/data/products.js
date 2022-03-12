@@ -48,6 +48,7 @@ const products = [
         size: ['s', 'm', 'l', 'xxl'],
         slug: 'women-01',
         isFavorite: false,
+        quantity: 1,
         describe: 'Long-sleeve T-shirt with added sun protection. A versatile wardrobe essential'
     },
     {
@@ -62,6 +63,7 @@ const products = [
         size: ['s', 'm', 'l', 'xl'],
         slug: 'women-02',
         isFavorite: false,
+        quantity: 1,
         describe: 'Our high-performance T-shirt for sports or everyday wear'
     },
     {
@@ -76,6 +78,7 @@ const products = [
         size: ['xs', 'm'],
         slug: 'women-03',
         isFavorite: false,
+        quantity: 1,
         describe: 'In response to customer feedback, the body has been updated for a more relaxed fit'
     },
 
@@ -91,6 +94,7 @@ const products = [
         size: ['s', 'm', 'l'],
         slug: 'women-04',
         isFavorite: false,
+        quantity: 1,
         describe: 'Comfortable knit with a springy texture. Slit hems for easy layering'
     },
     {
@@ -105,6 +109,7 @@ const products = [
         size: ['s'],
         slug: 'men-01',
         isFavorite: false,
+        quantity: 1,
         describe: 'A rugby shirt with a quintessential JWA style. Features a striking stripe design'
     },
     {
@@ -119,6 +124,7 @@ const products = [
         size: ['s', 'm'],
         slug: 'men-02',
         isFavorite: false,
+        quantity: 1,
         describe: 'A versatile cardigan with an elegant texture and a classic design.'
     },
     {
@@ -133,6 +139,7 @@ const products = [
         size: ['m', 'l'],
         slug: 'men-03',
         isFavorite: false,
+        quantity: 1,
         describe: 'A sophisticated shirt with minimalist design.'
     },
     {
@@ -147,6 +154,7 @@ const products = [
         size: [],
         slug: 'accessories-01',
         isFavorite: false,
+        quantity: 1,
         describe: 'A convenient folding umbrella for both sunny and rainy days. Compact yet strong.'
     },
     {
@@ -160,7 +168,8 @@ const products = [
         colors: ['black', 'brown'],
         size: [],
         slug: 'accessories-02',
-        isFavorite: false,
+        isFavorite: true,
+        quantity: 1,
         describe: 'The perfect size for a quick outing. Three pocket design provides neat storage.'
     },
     //9 products

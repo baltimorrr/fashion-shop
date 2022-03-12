@@ -11,6 +11,8 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
+    height: 100vh;
+    overflow: hidden;
     &__overlay {
         position: absolute;
         top: 0;
@@ -30,7 +32,7 @@
         background-color: white;
         display: flex;
         padding-top: 40px;
-        i {
+        &__close {
             position: absolute;
             top: 0;
             right: 0;
@@ -58,7 +60,7 @@
             }
         }
         &__main {
-            height: 810px;
+            height: 94%;
             img {
                 height: 100%;
                 object-fit: cover;
@@ -89,10 +91,76 @@
             color: #666;
             line-height: 23.8px;
             max-width: 495px;
+            margin-bottom: 30px;
+        }
+        &__select {
+            width: 212px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            select {
+                padding: 5px 10px;
+                border-radius: 4px;
+                border: 1px solid #e6e6e6;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        &__quantity {
+            display: inline-flex;
+            width: 137px;
+            height: 45px;
+            font-size: 20px;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 60px;
+            margin-top: 20px;
+            &__btn {
+                height: 100%;
+                width: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border: 1px solid #e6e6e6;
+            }
+            &__input {
+                background-color: #f7f7f7;
+                color: #666;
+                height: 100%;
+                width: 47px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-top: 1px solid #e6e6e6;
+                border-bottom: 1px solid #e6e6e6;
+            }
+        }
+        &__btn {
+            margin-top: 20px;
+            margin-left: 60px;
+            &__add {
+                min-width: 137px;
+                text-transform: uppercase;
+                line-height: 1.47;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
         }
     }
     &__show {
         opacity: 1;
         visibility: visible;
+    }
+}
+.option {
+    &__size {
+        text-transform: uppercase;
+    }
+    &__color {
+        text-transform: capitalize;
     }
 }

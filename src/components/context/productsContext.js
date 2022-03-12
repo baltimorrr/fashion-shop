@@ -5,11 +5,32 @@ const ProductContext = createContext();
 
 const ProductProvider = (props) => {
     const [products, setProducts] = useState([...productData.getAllProducts()])
-    console.log(products)
+    const [cartItems, setCartItems] = useState([])
+    const [favoriteList, setFavoriteList] = useState([])
+    
+    const addToCart = (newItem) => {
+        setCartItems((prevItems) => {
+            return [...prevItems, newItem]
+        })
+    }
+
+    const toggleFavorite = (productID) => {
+        const updateProducts = products.map((item) => {
+            if(item.id === productID) {
+                return {...item, isFavorite: !item.isFavorite}
+            }
+            return item
+        })
+        setProducts(updateProducts)
+    }
 
     const value = {
         products,
+        cartItems,
         setProducts,
+        setCartItems,
+        addToCart,
+        toggleFavorite,
     }
 
     return <ProductContext.Provider value={value} {...props}></ProductContext.Provider>;
