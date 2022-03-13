@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/images/logo.png";
+import CartDrawer from "./CartDrawer";
 import { useProducts } from "./context/productsContext";
 
 const mainNav = [
@@ -33,6 +34,7 @@ const mainNav = [
 
 const Header = () => {
     const headerRef = useRef(null);
+    const [showCartDrawer, setShowCartDrawer] = useState(false)
     const { cartItems, favoriteList } = useProducts();
 
     const handleScrollHeader = () => {
@@ -45,6 +47,10 @@ const Header = () => {
             headerRef.current.classList.remove("shrink");
         }
     };
+
+    const handleCloseDrawer = () => {
+        setShowCartDrawer(false)
+    }
 
     useEffect(() => {
         window.addEventListener("scroll", handleScrollHeader);
@@ -76,7 +82,7 @@ const Header = () => {
                     <div className="header__right">
                         <div className="header__icons">
                             <i className="bx bx-search"></i>
-                            <div className="header__icons__item">
+                            <div className="header__icons__item" onClick={() => setShowCartDrawer(true)}>
                                 <i className="bx bxs-cart"></i>
                                 {cartItems.length > 0 && (
                                     <div className="header__icons__count">
@@ -96,6 +102,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            <CartDrawer open={showCartDrawer} handleClose={handleCloseDrawer} cartItems={cartItems} />
         </div>
     );
 };

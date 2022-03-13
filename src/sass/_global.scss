@@ -32,6 +32,16 @@
             background-color: #222;
         }
     }
+    &-black {
+        background-color: #222;
+        text-transform: uppercase;
+        border-radius: 2.3rem;
+        height: 46px;
+        transition: background-color 0.3s ease;
+        &:hover {
+            background-color: #717fe0;
+        }
+    }
     &-white {
         color: #888;
         background-color: #fff;
