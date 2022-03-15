@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import CartItems from "../components/CartItems";
+import Helmet from "../components/Helmet";
 
 const Cart = () => {
     return (
-        <div className="cart">
-            Cart
-        </div>
-    )
-}
+        <Helmet title="Shopping Cart">
+            <div className="cart">
+                <div className="cart-container">
+                    <CartItems />
+                </div>
+            </div>
+        </Helmet>
+    );
+};
 
-export default Cart
+export default Cart;

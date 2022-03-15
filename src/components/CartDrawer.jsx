@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { useNavigate } from "react-router-dom";
 
 const CartDrawer = ({ open = false, handleClose = () => {}, cartItems }) => {
+    const navigate = useNavigate()
 
     const total = (cartItems) => {
         let money = 0
@@ -9,6 +11,11 @@ const CartDrawer = ({ open = false, handleClose = () => {}, cartItems }) => {
             money += (element.quantity * element.price)
         });
         return money
+    }
+
+    const handleNavigateCart = () => {
+        navigate('/cart')
+        handleClose()
     }
 
     if (typeof document === "undefined")
@@ -61,7 +68,7 @@ const CartDrawer = ({ open = false, handleClose = () => {}, cartItems }) => {
                     <span className="cart-drawer__content__button__total">
                         Total : {total(cartItems)} VND
                     </span>
-                    <button className="cart-drawer__content__button__black">
+                    <button className="cart-drawer__content__button__black" onClick={handleNavigateCart}>
                         View cart
                     </button>
                 </div>
