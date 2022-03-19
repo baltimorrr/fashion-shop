@@ -14,6 +14,10 @@ const ProductProvider = (props) => {
         })
     }
 
+    const removeFromCart = (productID) => {
+        setCartItems(prevItems => prevItems.filter(item => item.id !== productID))
+    }
+
     const toggleFavorite = (productID) => {
         const updateProducts = products.map((item) => {
             if(item.id === productID) {
@@ -31,6 +35,7 @@ const ProductProvider = (props) => {
         setProducts,
         setCartItems,
         addToCart,
+        removeFromCart,
         toggleFavorite,
     }
 

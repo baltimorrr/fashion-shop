@@ -12,7 +12,7 @@ const Layout = () => {
                 <BrowserRouter>
                     <div>
                         <Header />
-                        <div className="main">
+                        <div className="main" style={{minHeight: `100vh`}}>
                             <Router />
                         </div>
                         <Footer />

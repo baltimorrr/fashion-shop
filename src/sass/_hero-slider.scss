@@ -30,7 +30,7 @@
     &__left, &__right {
         position: absolute;
         z-index: 1001;
-        font-size: 80px;
+        font-size: 50px;
         color: $text-main-color;
         transition: all 0.5s ease;
         &:hover {

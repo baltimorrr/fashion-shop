@@ -70,10 +70,12 @@
                 margin-bottom: 14px;
                 position: relative;
                 overflow: hidden;
+                border-radius: 4px;
                 img {
                     height: 390px;
                     object-fit: cover;
                     transition: all 0.5s ease;
+                    border-radius: 4px;
                 }
                 button {
                     position: absolute;

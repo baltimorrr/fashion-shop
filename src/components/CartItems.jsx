@@ -10,7 +10,7 @@ const CartItems = () => {
             item,
             ...cartItems.slice(index + 1),
         ];
-        setCartItems(newCart)
+        setCartItems(newCart);
     };
 
     return (
@@ -26,7 +26,7 @@ const CartItems = () => {
                     cartItems.map((item, index) => (
                         <CartItem
                             item={item}
-                            key={item.id}
+                            key={index}
                             index={index}
                             updateCartItems={updateCartItems}
                         />
@@ -41,6 +41,7 @@ const CartItems = () => {
 
 const CartItem = ({ item, index, updateCartItems }) => {
     const [currentQuantity, setCurrentQuantity] = useState(item.quantity);
+    const {removeFromCart} = useProducts()
 
     const newItem = { ...item, quantity: currentQuantity };
 
@@ -52,8 +53,17 @@ const CartItem = ({ item, index, updateCartItems }) => {
                 currentQuantity - 1 < 1 ? 1 : currentQuantity - 1
             );
         console.log(newItem);
-        if(type === "plus") updateCartItems({ ...item, quantity: currentQuantity + 1}, index);
-        else updateCartItems({ ...item, quantity: currentQuantity - 1 === 0 ? 1 : currentQuantity - 1}, index);
+        if (type === "plus")
+            updateCartItems({ ...item, quantity: currentQuantity + 1 }, index);
+        else
+            updateCartItems(
+                {
+                    ...item,
+                    quantity:
+                        currentQuantity - 1 === 0 ? 1 : currentQuantity - 1,
+                },
+                index
+            );
     };
 
     return (
@@ -61,6 +71,9 @@ const CartItem = ({ item, index, updateCartItems }) => {
             <td className="column-1">
                 <div className="cart__table__list__item__image">
                     <img src={item.image01} alt="" />
+                    <div className="cart__table__list__item__image__delete">
+                        <i className="bx bx-x" onClick={() => removeFromCart(item.id)}></i>
+                    </div>
                 </div>
                 <span className="cart__table__list__item__title">
                     {item.title}

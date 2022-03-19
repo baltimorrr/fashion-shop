@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useNavigate } from "react-router-dom";
+import { useProducts } from "./context/productsContext";
 
-const CartDrawer = ({ open = false, handleClose = () => {}, cartItems }) => {
+const CartDrawer = ({ open = false, handleClose = () => {} }) => {
     const navigate = useNavigate()
-
+    const {cartItems, removeFromCart} = useProducts()
+    console.log(cartItems);
     const total = (cartItems) => {
         let money = 0
         cartItems.forEach(element => {
@@ -39,13 +41,16 @@ const CartDrawer = ({ open = false, handleClose = () => {}, cartItems }) => {
                     </div>
                     <div className="cart-drawer__content__container__body">
                         {cartItems.length > 0 ? (
-                            cartItems.map((item) => (
-                                <div className="cart-drawer__content__container__item">
+                            cartItems.map((item, index) => (
+                                <div key={index} className="cart-drawer__content__container__item">
                                     <div className="cart-drawer__content__container__image">
                                         <img
                                             src={item.image01}
                                             alt=""
                                         />
+                                        <div className="cart-drawer__content__container__image__delete">
+                                            <i className="bx bx-x" onClick={() => removeFromCart(item.id)}></i>
+                                        </div>
                                     </div>
                                     <div className="cart-drawer__content__container__info">
                                         <p className="cart-drawer__content__container__info__title">

@@ -16,19 +16,33 @@ const ProductModal = ({ open = false, handleClose = () => {}, item }) => {
     };
 
     const handleAddToCart = () => {
-        const newAttr = {
-            size: size,
-            color: color,
-            quantity: quantity,
-        };
-        const newItem = { ...item, ...newAttr };
-        addToCart(newItem)
-        alert('success')
-        handleClose()
+        if (check()) {
+            const newAttr = {
+                size: size,
+                color: color,
+                quantity: quantity,
+            };
+            const newItem = { ...item, ...newAttr };
+            addToCart(newItem);
+            alert("success");
+            handleClose();
+        }
     };
-
-    console.log(cartItems.length);
-
+    
+    const check = () => {
+        if(item.category !== 'accessories') {
+            if (size === undefined) {
+                alert("You haven't chosen size yet");
+                return false;
+            }
+        }
+        
+        if (color === undefined) {
+            alert("You haven't chosen color yet");
+            return false
+        }
+        return true
+    };
 
     if (typeof document === "undefined") return <div className="modal"></div>;
     return ReactDOM.createPortal(

@@ -29,10 +29,34 @@
                 &__image {
                     display: inline-block;
                     transform: translateY(38%);
+                    
                     img {
                         width: 60px;
                         height: 80px;
                         object-fit: cover;
+                    }
+                    &__delete {
+                        position: absolute;
+                        background-color: #444;
+                        opacity: 0;
+                        visibility: hidden;
+                        top: 0;
+                        left: 0;
+                        width: 60px;
+                        height: 80px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.5s ease;
+                        i {
+                            color: #fff;
+                            font-size: 24px;
+                            cursor: pointer;
+                        }
+                    }
+                    &:hover &__delete {
+                        opacity: 0.7;
+                        visibility: visible;
                     }
                 }
                 &__title {
@@ -40,6 +64,8 @@
                     display: inline-block;
                     margin-left: 10px;
                 }
+                
+                
             }
         }
         &__empty {

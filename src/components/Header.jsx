@@ -102,7 +102,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <CartDrawer open={showCartDrawer} handleClose={handleCloseDrawer} cartItems={cartItems} />
+            <CartDrawer open={showCartDrawer} handleClose={handleCloseDrawer} />
         </div>
     );
 };
