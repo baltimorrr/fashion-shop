@@ -3,22 +3,24 @@ import ReactDOM from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "./context/productsContext";
 
+
+
 const CartDrawer = ({ open = false, handleClose = () => {} }) => {
-    const navigate = useNavigate()
-    const {cartItems, removeFromCart} = useProducts()
-    console.log(cartItems);
+    const navigate = useNavigate();
+    const { cartItems, removeFromCart } = useProducts();
+    // console.log(JSON.stringify(cartItems));
     const total = (cartItems) => {
-        let money = 0
-        cartItems.forEach(element => {
-            money += (element.quantity * element.price)
+        let money = 0;
+        cartItems.forEach((element) => {
+            money += element.quantity * element.price;
         });
-        return money
-    }
+        return money;
+    };
 
     const handleNavigateCart = () => {
-        navigate('/cart')
-        handleClose()
-    }
+        navigate("/cart");
+        handleClose();
+    };
 
     if (typeof document === "undefined")
         return <div className="cart-drawer"></div>;
@@ -42,14 +44,19 @@ const CartDrawer = ({ open = false, handleClose = () => {} }) => {
                     <div className="cart-drawer__content__container__body">
                         {cartItems.length > 0 ? (
                             cartItems.map((item, index) => (
-                                <div key={index} className="cart-drawer__content__container__item">
+                                <div
+                                    key={index}
+                                    className="cart-drawer__content__container__item"
+                                >
                                     <div className="cart-drawer__content__container__image">
-                                        <img
-                                            src={item.image01}
-                                            alt=""
-                                        />
+                                        <img src={item.image01} alt="" />
                                         <div className="cart-drawer__content__container__image__delete">
-                                            <i className="bx bx-x" onClick={() => removeFromCart(item.id)}></i>
+                                            <i
+                                                className="bx bx-x"
+                                                onClick={() =>
+                                                    removeFromCart(item.id)
+                                                }
+                                            ></i>
                                         </div>
                                     </div>
                                     <div className="cart-drawer__content__container__info">
@@ -73,7 +80,10 @@ const CartDrawer = ({ open = false, handleClose = () => {} }) => {
                     <span className="cart-drawer__content__button__total">
                         Total : {total(cartItems)} VND
                     </span>
-                    <button className="cart-drawer__content__button__black" onClick={handleNavigateCart}>
+                    <button
+                        className="cart-drawer__content__button__black"
+                        onClick={handleNavigateCart}
+                    >
                         View cart
                     </button>
                 </div>

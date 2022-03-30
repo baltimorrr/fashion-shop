@@ -9,6 +9,19 @@
     padding: 0 15px;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #666060; // #666060
+    border-radius: 100rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
 .btn {
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
