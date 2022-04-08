@@ -29,12 +29,12 @@ body::-webkit-scrollbar-track {
     font-size: 15px;
     text-align: center;
     color: #fff;
-    padding: .5rem 1rem;
+    padding: .8rem 1.6rem;
     display: inline-block;
     border: 0;
     background-color: transparent;
     height: 46px;
-    max-width: 161px;
+    // max-width: 161px;
     &-blue {
         background-color: #717fe0;
         text-transform: uppercase;
@@ -50,6 +50,7 @@ body::-webkit-scrollbar-track {
         text-transform: uppercase;
         border-radius: 2.3rem;
         height: 46px;
+        width: auto;
         transition: background-color 0.3s ease;
         &:hover {
             background-color: #717fe0;
@@ -62,6 +63,7 @@ body::-webkit-scrollbar-track {
         border: 1px solid #e6e6e6;
         border-radius: 3px;
         height: 40px;
+        width: auto;
         transition: all 0.5s ease;
         &:hover {
             background-color: #717fe0;

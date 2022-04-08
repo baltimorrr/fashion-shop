@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useProducts } from "./context/productsContext";
+import { useNavigate } from "react-router-dom";
 
 const CartItems = () => {
     const { cartItems, setCartItems } = useProducts();
+    const navigate = useNavigate();
 
     const updateCartItems = (item, index) => {
         const newCart = [
@@ -35,13 +37,24 @@ const CartItems = () => {
                     <div className="cart__table__empty">Empty</div>
                 )}
             </table>
+            <div className="cart__footer">
+                <button
+                    className="btn btn-black cart__button__shopping"
+                    onClick={() => navigate("/catalog")}
+                >
+                    Back to shopping
+                </button>
+                <button className="btn btn-black cart__button__shopping">
+                    Check out
+                </button>
+            </div>
         </div>
     );
 };
 
 const CartItem = ({ item, index, updateCartItems }) => {
     const [currentQuantity, setCurrentQuantity] = useState(item.quantity);
-    const {removeFromCart} = useProducts()
+    const { removeFromCart } = useProducts();
 
     const newItem = { ...item, quantity: currentQuantity };
 
@@ -72,7 +85,10 @@ const CartItem = ({ item, index, updateCartItems }) => {
                 <div className="cart__table__list__item__image">
                     <img src={item.image01} alt="" />
                     <div className="cart__table__list__item__image__delete">
-                        <i className="bx bx-x" onClick={() => removeFromCart(item.id)}></i>
+                        <i
+                            className="bx bx-x"
+                            onClick={() => removeFromCart(item.id)}
+                        ></i>
                     </div>
                 </div>
                 <span className="cart__table__list__item__title">

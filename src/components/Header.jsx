@@ -11,25 +11,25 @@ const mainNav = [
         path: "/",
     },
     {
-        display: "Shop",
+        display: "Catalog",
         path: "/catalog",
     },
     {
         display: "Cart",
         path: "/cart",
     },
-    {
-        display: "Blog",
-        path: "/blog",
-    },
-    {
-        display: "About",
-        path: "/blog",
-    },
-    {
-        display: "Contact",
-        path: "/blog",
-    },
+    // {
+    //     display: "Blog",
+    //     path: "/blog",
+    // },
+    // {
+    //     display: "About",
+    //     path: "/blog",
+    // },
+    // {
+    //     display: "Contact",
+    //     path: "/blog",
+    // },
 ];
 
 const Header = () => {
