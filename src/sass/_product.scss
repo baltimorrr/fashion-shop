@@ -130,3 +130,26 @@
 .favorite-gray {
     color: #999;
 }
+
+@include maxw(1279px) {
+    .product__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@include maxw(767px) {
+    .product__header__option__category p {
+        margin-right: 15px;
+    }
+    .product__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@include maxw(575px) {
+    .product__header__option__button {
+        display: none;
+    }
+    .product__list {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}

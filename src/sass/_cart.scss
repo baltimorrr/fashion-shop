@@ -166,3 +166,13 @@
 //         width: 14%;
 //     }
 // }
+@include maxw(1023px) {
+    .cart__table {
+        width: 100%;
+    }
+}
+@include maxw(767px) {
+    .column-1 {
+        padding-left: 10px;
+    }
+}

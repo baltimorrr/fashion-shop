@@ -75,3 +75,17 @@
         height: 70px;
     }
 }
+
+@include maxw(575px) {
+    .header {
+        &__logo {
+            min-width: 100px;
+        }
+        &__nav {
+            margin-left: 20px;
+        }
+        &__icons i {
+            font-size: 22px;
+        }
+    }
+}

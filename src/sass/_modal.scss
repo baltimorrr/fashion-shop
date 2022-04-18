@@ -165,3 +165,45 @@
         text-transform: capitalize;
     }
 }
+
+@include maxw(767px) {
+    .modal__content {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .modal__images {
+        width: 100%;
+    }
+    .modal__images__main {
+        height: 350px;
+        width: 100%;
+        margin-right: 20px;
+        img {
+            width: inherit;
+            object-position: top;
+        }
+    }
+    .modal__info {
+        max-width: 350px;
+        margin: 0 auto;
+        &__title {
+            font-size: 2rem;
+            line-height: 20px;
+            margin-bottom: 8px;
+        }
+        &__price {
+            font-size: 1.6em;
+            line-height: 20px;
+            margin-bottom: 14px;
+        }
+        &__desc {
+            margin-bottom: 20px;
+        }
+        &__select {
+            margin-bottom: 10px;
+        }
+        &__quantity {
+            margin-top: 14px;
+        }
+    }
+}

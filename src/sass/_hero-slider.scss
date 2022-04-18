@@ -65,3 +65,17 @@
         }
     }
 }
+
+@include maxw(767px) {
+    .hero {
+        &__subtitle {
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+        &__title {
+            font-size: 4.5rem;
+            line-height: 40px;
+            margin-bottom: 30px;
+        }
+    }
+}
