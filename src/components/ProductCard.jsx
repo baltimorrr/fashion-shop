@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useProducts } from "./context/productsContext";
 import ProductModal from "./ProductModal";
-import {CSSTransition} from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
+
+import { motion } from "framer-motion/dist/framer-motion";
 
 const ProductCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false);
