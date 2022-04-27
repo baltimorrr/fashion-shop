@@ -59,7 +59,7 @@ const Header = () => {
         };
     }, []);
 
-    console.log(cartItems);
+    // console.log(cartItems);
 
     return (
         <div className="header" ref={headerRef}>

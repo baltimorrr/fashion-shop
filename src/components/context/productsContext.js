@@ -4,29 +4,41 @@ import productData from "../../assets/data/products";
 const ProductContext = createContext();
 
 const ProductProvider = (props) => {
-    const [products, setProducts] = useState([...productData.getAllProducts()])
-    const [cartItems, setCartItems] = useState([])
-    const [favoriteList, setFavoriteList] = useState([])
-    
+    const [products, setProducts] = useState([...productData.getAllProducts()]);
+    const [cartItems, setCartItems] = useState([]);
+    const [favoriteList, setFavoriteList] = useState([]);
+
     const addToCart = (newItem) => {
         setCartItems((prevItems) => {
-            return [...prevItems, newItem]
-        })
-    }
+            return [...prevItems, newItem];
+        });
+    };
 
     const removeFromCart = (productID) => {
-        setCartItems(prevItems => prevItems.filter(item => item.id !== productID))
-    }
+        setCartItems((prevItems) =>
+            prevItems.filter((item) => item.id !== productID)
+        );
+    };
 
     const toggleFavorite = (productID) => {
         const updateProducts = products.map((item) => {
-            if(item.id === productID) {
-                return {...item, isFavorite: !item.isFavorite}
+            if (item.id === productID) {
+                return { ...item, isFavorite: !item.isFavorite };
             }
-            return item
-        })
-        setProducts(updateProducts)
-    }
+            return item;
+        });
+        setProducts(updateProducts);
+    };
+
+    const filterProductList = (typeProduct) => {
+        typeProduct !== "all products"
+            ? setProducts(
+                  productData
+                      .getAllProducts()
+                      .filter((item) => item.category === typeProduct)
+              )
+            : setProducts([...productData.getAllProducts()]);
+    };
 
     const value = {
         products,
@@ -37,9 +49,15 @@ const ProductProvider = (props) => {
         addToCart,
         removeFromCart,
         toggleFavorite,
-    }
+        filterProductList,
+    };
 
-    return <ProductContext.Provider value={value} {...props}></ProductContext.Provider>;
+    return (
+        <ProductContext.Provider
+            value={value}
+            {...props}
+        ></ProductContext.Provider>
+    );
 };
 
 const useProducts = () => {

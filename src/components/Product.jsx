@@ -26,28 +26,19 @@ const categories = [
 
 const Product = ({ showHeading = true }) => {
     const filterRef = useRef(null);
-    const { products } = useProducts();
-    const [productFiltered, setProductFiltered] = useState(products);
-
-    console.log(products);
+    const { products, filterProductList } = useProducts();
+    // const [productFiltered, setProductFiltered] = useState(products);
 
     const filterToggle = () => filterRef.current.classList.toggle("active");
 
     const categoryToggle = (e) => {
         // e.target.classList.toggle("active");
-        console.log(e.target.innerText);
+        // console.log(e.target.innerText);
         filterProductList(e.target.innerText.toLowerCase());
+        console.log(products);
     };
 
-    const filterProductList = (typeProduct) => {
-        typeProduct !== "all products"
-            ? setProductFiltered(
-                  products.filter((item) => item.category === typeProduct)
-              )
-            : setProductFiltered(products);
-    };
-
-    console.log(productFiltered);
+    // console.log(productFiltered);
 
     return (
         <Helmet title="Product">
@@ -95,7 +86,7 @@ const Product = ({ showHeading = true }) => {
                         </div>
                     </div>
                     <div className="product__list">
-                        {productFiltered.map((item, index) => (
+                        {products.map((item, index) => (
                             <ProductCard key={index} item={item} />
                         ))}
                     </div>

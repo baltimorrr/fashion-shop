@@ -9,7 +9,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 const ProductCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false);
     const { toggleFavorite } = useProducts();
-
+    
     const handleClose = () => {
         setShowModal(false);
     };

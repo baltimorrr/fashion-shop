@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Category = (props) => {
     const data = props.data;
-    console.log(data);
+    // console.log(data);
     return (
         <div className="container">
             <div className="category">
